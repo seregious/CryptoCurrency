@@ -12,8 +12,8 @@ import com.example.cryptocurrency.Coin
 interface CoinDao {
 
     @Query("SELECT * FROM coins")
-    fun getCoinList(): List<CoinEntity>
+    fun getCoinList(): LiveData<List<CoinEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertCoins(coins: List<CoinEntity>)
+    suspend fun insertCoins(coins: List<CoinEntity>)
 }
