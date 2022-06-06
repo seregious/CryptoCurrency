@@ -2,6 +2,7 @@ package com.example.cryptocurrency.room
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "coins")
 
@@ -12,7 +13,7 @@ data class CoinEntity (
     val current_price: String,
     val price_change_24h: String,
     val last_updated: String
-)
+): Serializable
 
 //{
 //    fun getCoin(): Coin = Coin (
